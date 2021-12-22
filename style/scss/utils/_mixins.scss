@@ -1,0 +1,35 @@
+@use "./../utils/variables";
+
+// layout
+@mixin flex-center($direction, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+// responsive
+@mixin mobile-only {
+  @media screen and (min-width: map-get(variables.$breakpoints, mobile)){
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: map-get(variables.$breakpoints, tablet)) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: map-get(variables.$breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin widescreen-only {
+  @media screen and (min-width: map-get(variables.$breakpoints, widescreen)) {
+    @content;
+  }
+}

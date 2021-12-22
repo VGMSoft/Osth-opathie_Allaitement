@@ -1,0 +1,26 @@
+@use "./../utils/variables";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700;800&display=swap');
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  position: relative;
+
+  &::before {
+    width: 1em;
+    height: 1em;
+    background-image: url('./../public/icons/triangle.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: -1.5em;
+    content: " ";
+  }
+}
+
+
+#cabinet > h3 {
+  color: variables.$sealBrown;
+}

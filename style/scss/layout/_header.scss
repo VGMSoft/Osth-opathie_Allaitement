@@ -1,0 +1,81 @@
+@use "./../utils/mixins";
+
+.hero {
+  color: white;
+  height: 100vh;
+  background-image: url('./../legacy/Images/specificites.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #86b7fe;
+  @include mixins.flex-center(column);
+  position: relative;
+
+  &__menu {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 1em;
+
+    & ul {
+      list-style: none;
+      @include mixins.flex-center(row);
+      //@include mixins.mobile-only {
+      //  @include mixins.flex-center(column);
+      //}
+      & > li {
+        margin: .5em;
+        background-color: #000;
+        & > a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &--launcher {
+      width: 2em;
+      height: 2em;
+      background-image: url('./../public/icons/menu.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 1em;
+    }
+  }
+
+  &__title {
+    margin: .5em;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 900;
+    @include mixins.mobile-only {
+      font-size: 2.5em;
+      font-weight: 700;
+    }
+  }
+
+  &__names {
+    width: 100vw;
+    @include mixins.flex-center(row, space-evenly);
+    font-size: 2em;
+    font-weight: 200;
+
+    & p {
+      text-align: center;
+    }
+  }
+
+  &__chevron {
+    width: 2em;
+    height: 2em;
+    background-image: url('./../public/icons/chevron--down.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 4vh;
+    margin: 1em;
+  }
+
+}

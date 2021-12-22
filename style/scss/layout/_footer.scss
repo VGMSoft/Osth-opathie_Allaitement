@@ -1,0 +1,9 @@
+@use "./../utils/mixins";
+
+footer {
+  background-color: #2c3034;
+  @include mixins.flex-center(column, center, center);
+  color: white;
+  position: sticky;
+  bottom: 0;
+}

@@ -1,0 +1,27 @@
+@use "./../utils/mixins";
+@use "./../utils/variables";
+
+.topics {
+  padding: 1em 10vw;
+
+  &:nth-child(2n) {
+    background-color: variables.$mistyRose;
+  }
+
+  @include mixins.desktop-only {
+    height: 100vh
+  }
+
+  //&:nth-child(-n+3) {
+  //  @include mixins.desktop-only {
+  //    height: 100vh;
+  //  }
+  //}
+  //
+  //&:last-child {
+  //  @include mixins.desktop-only {
+  //    height: 100vh;
+  //  }
+  //}
+}
+
